@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
     base: getBase(req),
     onsens: getOnsens()
   };
+  res.set('vary', 'AMP-Cache-Transform');
   res.render('list', data);
 });
 
@@ -48,6 +49,7 @@ app.get('/paradise/:name/amp', (req, res) => {
     base: getBase(req),
     target
   };
+  res.set('vary', 'AMP-Cache-Transform');
   res.render('amp-item', data)
 });
 
