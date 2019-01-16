@@ -12,14 +12,19 @@ html(amp)
         body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
     title= "Signed HTTP Exchanges"
     style(amp-custom).
-      h1 {
+      h1, a, p {
         padding: 18px;
       }
+      header {
+        background-color: #318e8599;
+      }
   body
-    h1= "ONSEN LIST"
+    header
+      h1= "ONSEN LIST"
     ul
       each val in onsens
         li
           a(href=val.url) #{val.name}
           span  /  
           a(href=val.ampUrl) amp
+    p Visit chrome://flags/#allow-sxg-certs-without-extension and turn on the flag
