@@ -12,7 +12,14 @@ html
       header {
         background-color: #318e8599;
       }
+      header > h1 {
+        color: white;
+      }
+      img {
+        width: 100%;
+      }
   body
     header
       h1= target.name
-    p #{target.name}は最高
+    img(src=target.img)
+    p #{target.name}

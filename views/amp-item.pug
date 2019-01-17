@@ -16,9 +16,13 @@ html(amp)
         padding: 18px;
       }
       header {
-        background-color: #318e8599;
+        background-color: #1c79c0;
+      }
+      header > h1 {
+        color: white;
       }
   body
     header
-      h1 #{target.name} (AMP)
-    p #{target.name}は最高
+      h1 ⚡️ #{target.name}
+    amp-img(alt="A view of the sea" src=target.img width="900" height="675" layout="responsive")
+    p #{target.name}
