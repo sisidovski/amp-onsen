@@ -3,6 +3,7 @@ html(amp)
   head
     script(src='https://cdn.ampproject.org/v0.js', async)
     link(rel='canonical' href='.')
+    link(href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet")
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1')
     style(amp-boilerplate).
@@ -12,14 +13,33 @@ html(amp)
         body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
     title= "Signed HTTP Exchanges"
     style(amp-custom).
-      h1, a, p {
-        padding: 18px;
+      body {
+        font-family: "Roboto",sans-serif;
+        color: #333;
       }
-      header {
+      p {
+        padding: 0 18px;
+        margin: 0;
+      }
+      h1 {
+        padding: 18px;
+        margin: 0;
+        color: #FFF;
+      }
+      .header {
         background-color: #318e8599;
       }
+      .notice {
+        font-weight: bold;
+      }
+      .message {
+        margin-top: 8px;
+      }
+      p span {
+        background-color: #d8d8d8;
+      }
   body
-    header
+    header(class="header")
       h1= "ONSEN LIST"
     ul
       each val in onsens
@@ -27,4 +47,8 @@ html(amp)
           a(href=val.url) #{val.name}
           span  /  
           a(href=val.ampUrl) amp
-    p Visit chrome://flags/#allow-sxg-certs-without-extension and turn on the flag
+    p(class="notice") chrome://flags/#enable-signed-http-exchange
+    p(class="notice") chrome://flags/#allow-sxg-certs-without-extension
+    p(class="message") Run this command to accept self signed certificate for the demo.
+      br
+      span open -a Google\ Chrome\ Canary --args --ignore-certificate-errors-spki-list=qj57iAwMZqpUnOrMO+6chyDZqD9ZgcRGgsd6FBhgi1U=
