@@ -35,7 +35,7 @@ html(amp)
       .message {
         margin-top: 8px;
       }
-      p span {
+      p .background {
         background-color: #d8d8d8;
       }
   body
@@ -51,4 +51,7 @@ html(amp)
     p(class="notice") chrome://flags/#allow-sxg-certs-without-extension
     p(class="message") Run this command to accept self signed certificate for the demo.
       br
-      span open -a Google\ Chrome\ Canary --args --ignore-certificate-errors-spki-list=qj57iAwMZqpUnOrMO+6chyDZqD9ZgcRGgsd6FBhgi1U=
+      span(class="background") open -a Google\ Chrome\ Canary --args --ignore-certificate-errors-spki-list=qj57iAwMZqpUnOrMO+6chyDZqD9ZgcRGgsd6FBhgi1U=
+    p(class="message") You need to set "AMP-Cache-Transform: google" as a request header to see sxg response. 
+      a(href="https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en") ModHeader
+      span  is a useful extension.
