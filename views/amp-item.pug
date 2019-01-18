@@ -15,10 +15,16 @@ html(amp)
     style(amp-custom).
       body {
         font-family: "Roboto",sans-serif;
-        color: 333;
+        color: #333;
       }
-      h1,p {
+      p {
+        padding: 0 18px;
+        margin: 0;
+      }
+      h1 {
         padding: 18px;
+        margin: 0;
+        color: #FFF;
       }
       header {
         background-color: #1c79c0;
@@ -26,8 +32,11 @@ html(amp)
       header > h1 {
         color: white;
       }
+      .message {
+        margin-top: 8px;
+      }
   body
     header
       h1 ⚡️ #{target.name}
     amp-img(alt="A view of the sea" src=target.img width="900" height="675" layout="responsive")
-    p #{target.name}
+    p(class="message") #{target.name}

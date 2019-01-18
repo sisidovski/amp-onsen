@@ -9,10 +9,16 @@ html
     style.
       body {
         font-family: "Roboto",sans-serif;
-        color: 333;
+        color: #333;
       }
-      h1,p {
+      p {
+        padding: 0 18px;
+        margin: 0;
+      }
+      h1 {
         padding: 18px;
+        margin: 0;
+        color: #FFF;
       }
       header {
         background-color: #318e8599;
@@ -23,8 +29,11 @@ html
       img {
         width: 100%;
       }
+      .message {
+        margin-top: 8px;
+      }
   body
     header
       h1= target.name
     img(src=target.img)
-    p #{target.name}
+    p(class="message") #{target.name}
